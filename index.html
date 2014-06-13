@@ -405,6 +405,7 @@ body {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   font-weight: 100;
   color: #333333;
+  background: #FFFFFF;
 }
 
 h1 {
@@ -425,6 +426,14 @@ h3 {
 
 p {
   font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, p, ul {
+  margin: 10px 0;
+}
+
+ul {
+  padding: 20px 0 20px 60px;
 }
 
 .progress-bar {
@@ -471,6 +480,16 @@ p {
   padding: 30px;
 }
 
+.title .slide-content {
+  display: table;
+}
+
+.title h1 {
+  display: table-cell; 
+  vertical-align: middle;
+  z-index: 10;
+}
+
 .presenter img {
   height: 200px;
   width: 200px;
@@ -506,6 +525,10 @@ p {
   padding: 0 10px;
 }
 
+.sponsors h1 {
+  margin: 20px 0 40px 0;
+}
+
 .sponsors p {
   float: left;
   text-align: center;
@@ -516,6 +539,13 @@ p {
 .sponsors p > img {
   width: 100%;
   max-width: 240px;
+}
+
+.image p > img {
+  max-width: 600px;
+  max-height: 400px;
+  margin: 20px auto;
+  display: table-cell;
 }
   </style>
 </head>
@@ -533,11 +563,7 @@ p {
 <p>Maybe even Chris Rock</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-2">
-    <section class="slide-content"><h1 id="brought-to-you-by">Brought to you by</h1>
-</section>
-  </div>
-  <div class="slide hidden  presenter" id="slide-3">
+  <div class="slide hidden  presenter" id="slide-2">
     <section class="slide-content"><p><img src="http://gravatar.com/avatar/a14850281f19396480bdba4aab2d52ef?s=200" alt="David Luecke"></p>
 <h2 id="david-luecke">David Luecke</h2>
 <ul>
@@ -546,34 +572,8 @@ p {
 </ul>
 </section>
   </div>
-  <div class="slide hidden  presenter" id="slide-4">
-    <section class="slide-content"><p><img src="http://gravatar.com/avatar/23aba778a7daae99348aeb0728cf4aec?s=200" alt="Eric Kryski"></p>
-<h2 id="eric-kryski">Eric Kryski</h2>
-<ul>
-<li><a href="https://github.com/ekryski"><i class="fa fa-github"></i> ekryski</a></li>
-<li><a href="http://twitter.com/ekryski"><i class="fa fa-twitter"></i> @ekryski</a></li>
-<li><a href="http://erickryski.com"><i class="fa fa-home"></i> erickryski.com</a></li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden  sponsors" id="slide-5">
-    <section class="slide-content"><h1 id="our-sponsors">Our Sponsors</h1>
-<p><img src="img/sponsors/assembly_logo.png" alt="Assembly"></p>
-<p><img src="img/sponsors/village_brewery_logo.png" alt="Village Brewery"></p>
-<p><img src="img/sponsors/startup_calgary_logo.png" alt="Startup Calgary"></p>
-<p><img src="img/sponsors/petrofeed_logo.png" alt="PetroFeed"></p>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-6">
-    <section class="slide-content"><h1 id="last-month">Last Month</h1>
-<ul>
-<li>Something awesome</li>
-<li>More awesomeness</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><h1 id="next-month">Next Month</h1>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h1 id="what-s-html-5-anyway">What&#39;s HTML 5 anyway</h1>
 <ul>
 <li>Something awesome</li>
 <li>More awesomeness</li>

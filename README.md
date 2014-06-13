@@ -1,19 +1,5 @@
-### YYCjs Slide Template
+### WordcampYYC 2014 - Advanced Theming with HTML5
 
-Our template for our monthly slide deck using [cleaver](http://jdan.github.io/cleaver). Feel free to rip it off if you would like.
-
-To use it locally, there are 3 steps to instant gratification:
-
-1. Write [Markdown](http://daringfireball.net/projects/markdown/)
-2. `npm install -g cleaver`
-3. `cleaver path/to/slides.md`
-
-
-#### Special Classes
-
-To make your slides look a little nice there are a few special classes that you can use with this theme.
-
-* `title`
-* `presenter`
-* `sponsors`
-* `image`
+We will delve into some advance concepts surrounding WordPress theming and development.
+Showing attendees how to craft custom WordPress Child Themes
+and even walk you through how to add HTML Video elements straight into a custom comments section.
