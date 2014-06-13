@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>YYCjs Slides</title>
+  <title>Advanced Theming with HTML5</title>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,900,700,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="theme/font-awesome.css">
   <style type="text/css">
@@ -485,7 +485,7 @@ ul {
 }
 
 .title h1 {
-  display: table-cell; 
+  display: table-cell;
   vertical-align: middle;
   z-index: 10;
 }
@@ -547,6 +547,23 @@ ul {
   margin: 20px auto;
   display: table-cell;
 }
+
+pre > code {
+  font-size: 1.5em;
+}
+
+pre {
+  border: none;
+}
+
+.slide {
+  background: url('theme/logo.png') bottom right no-repeat;
+}
+
+.slide.hide-logo {
+  background: none;
+}
+
   </style>
 </head>
 <body>
@@ -555,12 +572,8 @@ ul {
   </div>
 
   <div class="slide" id="slide-1">
-    <section class="slide-content"><h1 id="yyc-js-presents-">YYC.js Presents:</h1>
-<h2 id="an-epic-slide-template">An Epic Slide Template</h2>
-<h3 id="that-totally-kicks-some-ass">That totally kicks some ass</h3>
-<h4 id="kind-of-like-chuck-norris">Kind of like Chuck Norris</h4>
-<h5 id="and-jackie-chan">And Jackie Chan</h5>
-<p>Maybe even Chris Rock</p>
+    <section class="slide-content"><h1 id="advanced-theming-with-html5">Advanced Theming with HTML5</h1>
+<h2 id="and-some-javascript">And some JavaScript</h2>
 </section>
   </div>
   <div class="slide hidden  presenter" id="slide-2">
@@ -574,15 +587,78 @@ ul {
   </div>
   <div class="slide hidden" id="slide-3">
     <section class="slide-content"><h1 id="what-s-html-5-anyway">What&#39;s HTML 5 anyway</h1>
+<p>Much like HTML 4 but with new elements, for example:</p>
+<p><img src="img/html5.png" style="float: right; width: 300px; margin-right: 100px;" alt="HTML5 logo" /></p>
 <ul>
-<li>Something awesome</li>
-<li>More awesomeness</li>
+<li><code>&lt;footer&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code></li>
+<li><code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code></li>
+<li><code>&lt;input type=&quot;number|search|email|url|...&quot;&gt;</code></li>
+<li><code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code></li>
+<li><code>&lt;canvas&gt;</code>, <code>&lt;progress&gt;</code></li>
+<li>And <a href="https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list">lots more</a></li>
 </ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h1 id="like-">Like...</h1>
+<p><code>&lt;input type=&quot;date&quot;&gt;</code></p>
+<input type="date" style="font-size: 1.5em; margin: 40px 0;">
+
+<p><code>&lt;progress&gt;</code></p>
+<progress max="100" value="20" style="zoom: 2; margin-top: 30px;"></progress></section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h1 id="and-javascript-apis">And JavaScript APIs</h1>
+<p><img src="img/js.png" style="float: right; width: 300px; margin-right: 100px;" alt="JS unofficial logo" /></p>
+<ul>
+<li>Drawing on <code>&lt;canvas&gt;</code></li>
+<li>Drag &amp; Drop</li>
+<li>Offline web applications</li>
+<li>Geolocation</li>
+<li>File upload</li>
+<li>Web audio and video</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h1 id="html-5-video-">HTML 5 <code>&lt;video&gt;</code></h1>
+<video id="video" style="margin: 0 auto; display: block;"></video></section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h1 id="the-codes">The codes</h1>
+<p>Initialize the camera on a <code>&lt;video id=&quot;video&quot;&gt;&lt;/video&gt;</code> element:</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> video = document.getElementById(<span class="string">'video'</span>);
+
+<span class="keyword">var</span> connect = <span class="function"><span class="keyword">function</span> <span class="params">(stream)</span> {</span>
+  video.src = window.URL ? window.URL.createObjectURL(stream) : stream;
+  video.play();
+};
+<span class="keyword">var</span> error = <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> {</span> alert(e.message); };
+
+navigator.getMedia = (navigator.getUserMedia ||
+  navigator.webkitGetUserMedia ||
+  navigator.mozGetUserMedia ||
+  navigator.msGetUserMedia);
+navigator.getMedia({ video: <span class="literal">true</span> }, connect, error);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h1 id="taking-a-snapshot">Taking a snapshot</h1>
+<p>Gets a Base64 encoded image of the current <code>&lt;video&gt;</code> element picture:</p>
+<pre><code class="lang-javascript"><span class="keyword">var</span> canvas = document.createElement(<span class="string">'canvas'</span>);
+<span class="keyword">var</span> context = canvas.getContext(<span class="string">'2d'</span>);
+
+canvas.width = video.videoWidth;
+canvas.height = video.videoHeight;
+ctx.drawImage(video, <span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);
+
+<span class="keyword">var</span> base64Image = canvas.toDataURL();</code></pre>
 </section>
   </div>
 
 
-  <img src="theme&#x2F;logo.png" alt="YYC.js logo" class="logo">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="application.js"></script>
   <script type="text/javascript">
     /**
  * Returns the current page number of the presentation.

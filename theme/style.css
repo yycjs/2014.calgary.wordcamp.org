@@ -89,7 +89,7 @@ ul {
 }
 
 .title h1 {
-  display: table-cell; 
+  display: table-cell;
   vertical-align: middle;
   z-index: 10;
 }
@@ -150,4 +150,20 @@ ul {
   max-height: 400px;
   margin: 20px auto;
   display: table-cell;
+}
+
+pre > code {
+  font-size: 1.5em;
+}
+
+pre {
+  border: none;
+}
+
+.slide {
+  background: url('theme/logo.png') bottom right no-repeat;
+}
+
+.slide.hide-logo {
+  background: none;
 }
