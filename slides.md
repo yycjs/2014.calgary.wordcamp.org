@@ -124,7 +124,7 @@ var context = canvas.getContext('2d');
 
 canvas.width = video.videoWidth;
 canvas.height = video.videoHeight;
-ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
 var base64Image = canvas.toDataURL();
 ```
