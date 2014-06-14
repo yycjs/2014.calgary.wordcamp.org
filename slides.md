@@ -91,7 +91,7 @@ in combination with [Web Components](http://webcomponents.org/):
 Initialize the camera on a `<video id="video"></video>` element:
 
 ```javascript
-var video = $('#video-snapshot').get(0);
+var video = document.getElementById('video-snapshot');
 
 function connect(stream) {
   video.src = window.URL ? window.URL.createObjectURL(stream) : stream;

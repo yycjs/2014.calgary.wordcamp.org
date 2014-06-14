@@ -645,7 +645,7 @@ in combination with <a href="http://webcomponents.org/">Web Components</a>:</p>
   <div class="slide hidden" id="slide-8">
     <section class="slide-content"><h1 id="the-codes">The codes</h1>
 <p>Initialize the camera on a <code>&lt;video id=&quot;video&quot;&gt;&lt;/video&gt;</code> element:</p>
-<pre><code class="lang-javascript"><span class="keyword">var</span> video = $(<span class="string">'#video-snapshot'</span>).get(<span class="number">0</span>);
+<pre><code class="lang-javascript"><span class="keyword">var</span> video = document.getElementById(<span class="string">'video-snapshot'</span>);
 
 <span class="function"><span class="keyword">function</span> <span class="title">connect</span><span class="params">(stream)</span> {</span>
   video.src = window.URL ? window.URL.createObjectURL(stream) : stream;
