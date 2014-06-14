@@ -84,11 +84,11 @@ in combination with [Web Components](http://webcomponents.org/):
 </script>
 ```
 
---
+-- hide-logo
 
 # HTML 5 `<video>`
 
-<video id="video" style="margin: 0 auto; display: block;"></video>
+<video id="video" style="margin: 0 auto; display: block; height: 70%;"></video>
 
 --
 
