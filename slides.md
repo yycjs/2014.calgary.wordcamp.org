@@ -10,6 +10,8 @@ logo: theme/logo.png
 
 ## And some JavaScript
 
+#### [yycjs.com/2014.calgary.wordcamp.org](http://yycjs.com/2014.calgary.wordcamp.org)
+
 -- presenter
 
 ![David Luecke](http://gravatar.com/avatar/a14850281f19396480bdba4aab2d52ef?s=200)
@@ -61,6 +63,29 @@ Much like HTML 4 but with new elements, for example:
 
 --
 
+# And custom elements
+
+HTML 5 allows to register your own custom tags. This will become especially interesting
+in combination with [Web Components](http://webcomponents.org/):
+
+```javascript
+<sript type="text/javascript" src="//daffl.github.io/slider/slider.js"></script>
+
+<davids-slider auto-rotate="true" time="2000">
+  <img src="image1.png" alt="Sets up">
+  <img src="image2.png" alt="an image">
+  <img src="image3.png" alt="slider">
+</davids-slider>
+
+<sript type="text/javascript">
+  $('davids-slider').click(function() {
+    this[0].stop();
+  });
+</script>
+```
+
+--
+
 # HTML 5 `<video>`
 
 <video id="video" style="margin: 0 auto; display: block;"></video>
@@ -72,13 +97,13 @@ Much like HTML 4 but with new elements, for example:
 Initialize the camera on a `<video id="video"></video>` element:
 
 ```javascript
-var video = document.getElementById('video');
+var video = $('#video-snapshot').get(0);
 
-var connect = function (stream) {
+function connect(stream) {
   video.src = window.URL ? window.URL.createObjectURL(stream) : stream;
   video.play();
 };
-var error = function (e) { alert(e.message); };
+function error(e) { alert(e.message); };
 
 navigator.getMedia = (navigator.getUserMedia ||
   navigator.webkitGetUserMedia ||
