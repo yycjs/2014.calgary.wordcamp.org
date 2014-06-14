@@ -76,12 +76,6 @@ in combination with [Web Components](http://webcomponents.org/):
   <img src="image2.png" alt="an image">
   <img src="image3.png" alt="slider">
 </davids-slider>
-
-<sript type="text/javascript">
-  $('davids-slider').click(function() {
-    this[0].stop();
-  });
-</script>
 ```
 
 -- hide-logo
